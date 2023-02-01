@@ -1,27 +1,19 @@
-import {Card, Row, Col} from 'react-bootstrap';
+import {Row} from 'react-bootstrap';
 import { Component} from 'react'
-import FantasyBooks from '../books/fantasy.json'
 import Container from 'react-bootstrap/esm/Container';
+import SingleBook from './SingleBook';
 
 class AllTheBooks extends Component {
     render() {
         return (
             <Container className='px-0'>
                 <Row className='mx-1 justify-content-center'>
-                    
-                    {FantasyBooks.map((books) => {
+                    {this.props.FantasyBooks.map(({asin, title, img, price, category}) => {
                         return (
-                            <Col key={books.img} lg={2} md={6} xs={12} className="d-flex justify-content-center px-0">
-                            <Card style={{ width: '18rem' }}>
-                                <Card.Img key={books.img} variant="top" src={books.img} />
-                            </Card>
-                            </Col>
-                    )
-                    }
-                    )
-                    }
-                    </Row>  
-                </Container>
+                            <SingleBook key={asin} title={title} img={img} price={price} category={category}></SingleBook>
+                                )})}
+                </Row>  
+            </Container>
         );
     }
 }
