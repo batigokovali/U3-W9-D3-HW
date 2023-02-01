@@ -18,13 +18,13 @@ state = { selected : false};
                         }
                     }}
                     className={this.state.selected ? "selected-book card-fix" : "card-fix"}>
-                        <Card.Img variant="top" src={this.props.img} className="image-fix"/>
+                        <Card.Img variant="top" src={this.props.singleBook.img} className="image-fix"/>
                         <Card.Title>{this.props.title}</Card.Title>
                         <Card.Text>
-                            {this.props.category}
+                            {this.props.singleBook.category}
                         </Card.Text>
                         <Card.Text>
-                            {this.props.price}€
+                            {this.props.singleBook.price}€
                         </Card.Text>
                     </Card>
                 </Col>
